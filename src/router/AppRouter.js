@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
 import ScrollToTop from "../Components/ScrollToTop/ScrollToTop";
@@ -14,7 +14,7 @@ import NotFound from "../Pages/NotFound/NotFound";
 
 function AppRouter() {
   return (
-    <Router>
+    <Router basename="/lifelink"> {/* Add basename for GitHub Pages */}
       <ScrollToTop />
       <Navbar />
       <main className="page-wrap">
