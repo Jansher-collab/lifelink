@@ -27,7 +27,7 @@ export default function Home() {
 
         <div className="hero-right">
           <img
-            src="/assets/ambulance-team.jpg"
+            src={`${process.env.PUBLIC_URL}/assets/ambulance-team.jpg`} 
             alt="LifeLink emergency medical team beside ambulance"
             className="hero-image"
             loading="lazy"
@@ -122,7 +122,7 @@ export default function Home() {
 
         <div className="cta-right">
           <img
-            src="/assets/emergency-ambulance-support.webp"
+            src= {`${process.env.PUBLIC_URL}/assets/emergency-ambulance-support.webp`}
             alt="LifeLink emergency ambulance support"
             className="cta-image"
             loading="lazy"

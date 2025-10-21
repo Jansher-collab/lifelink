@@ -14,7 +14,7 @@ import NotFound from "../Pages/NotFound/NotFound";
 
 function AppRouter() {
   return (
-    <Router basename="/lifelink"> {/* Add basename for GitHub Pages */}
+    <Router basename={process.env.PUBLIC_URL}>
       <ScrollToTop />
       <Navbar />
       <main className="page-wrap">
