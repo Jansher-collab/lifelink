@@ -1,0 +1,164 @@
+:root {
+  --primary: #0078d7;
+  --primary-dark: #0056a3;
+  --accent: #00c2a8;
+  --text: #0f172a;
+  --muted: #334155;
+  --bg: #f5f9fc;
+  --card: #ffffff;
+  --radius: 14px;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  --transition: all 0.3s ease-in-out;
+}
+
+/* ---------- BASE ---------- */
+.ambulances-page {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", "Poppins", sans-serif;
+  padding-top: 70px;
+  overflow-x: hidden;
+}
+
+/* ---------- INTRO ---------- */
+.ambulance-intro h1 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+.ambulance-intro .highlight {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ambulance-intro p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+
+.ambulance-fleet {
+  text-align: center;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem; /* ✅ top padding removed completely */
+}
+
+.ambulance-intro {
+  text-align: center;
+  padding: 2.5rem 1.5rem 0.5rem; /* ✅ reduced bottom margin/padding to 0.5rem */
+  max-width: 900px;
+  margin: 0 auto; 
+  animation: fadeIn 1s ease;
+}
+
+.ambulance-fleet h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: var(--muted);
+  max-width: 70ch;
+  margin: 0 auto 2.5rem;
+}
+
+.ambulance-fleet .fleet-grid {
+  margin-top: 2.2rem;
+}
+
+/* ---------- FLEET GRID ---------- */
+.fleet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.fleet-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.fleet-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 120, 215, 0.25);
+}
+
+.fleet-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.fleet-info {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.fleet-info h3 {
+  color: var(--primary-dark);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+}
+
+.fleet-info p {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+/* ---------- QUALITY SECTION ---------- */
+.ambulance-quality {
+  background: linear-gradient(135deg, rgba(0, 120, 215, 0.05), rgba(0, 194, 168, 0.08));
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.ambulance-quality h2 {
+  color: var(--primary-dark);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 1rem;
+}
+
+.ambulance-quality p {
+  color: var(--muted);
+  max-width: 70ch;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 991px) {
+  .fleet-grid { grid-template-columns: repeat(2, 1fr); }
+  .ambulance-intro { padding-top: 2rem; }
+  .ambulance-fleet .fleet-grid { margin-top: 1.8rem; }
+}
+
+@media (max-width: 600px) {
+  .fleet-grid { grid-template-columns: 1fr; }
+  .fleet-image { height: 200px; }
+  .ambulance-intro { padding: 2rem 1rem 1rem; }
+  .ambulance-fleet .fleet-grid { margin-top: 1.5rem; }
+}

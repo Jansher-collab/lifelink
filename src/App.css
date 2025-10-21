@@ -1,0 +1,133 @@
+/* -------------------------------
+   🌐 Global Layout & Base Styles
+--------------------------------*/
+
+/* Reset browser defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root variables */
+:root {
+  --navbar-height: 70px; /* Adjust to match your actual navbar height */
+  --footer-height: 120px;
+  --primary-color: #007bff;
+  --text-color: #1a1a1a;
+  --bg-light: #f8fafc;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Page setup */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Navbar fix — if navbar is fixed or sticky */
+body {
+  padding-top: var(--navbar-height);
+}
+
+/* -------------------------------
+   🧱 Layout Wrappers
+--------------------------------*/
+main.page-wrap {
+  /* Remove previous hardcoded padding */
+  padding-top: 0;
+  min-height: calc(100vh - var(--footer-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+/* Ensure full responsiveness */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* -------------------------------
+   📱 Responsive Typography
+--------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+p {
+  color: #444;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* -------------------------------
+   🧭 Navbar + Footer
+--------------------------------*/
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  background-color: #fff;
+  box-shadow: var(--shadow);
+  z-index: 1000;
+}
+
+footer {
+  height: var(--footer-height);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 0.9rem;
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* -------------------------------
+   🖥️ Responsive Utilities
+--------------------------------*/
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 60px;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .navbar {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --navbar-height: 56px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}

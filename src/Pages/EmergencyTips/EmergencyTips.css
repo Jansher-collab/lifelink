@@ -1,0 +1,238 @@
+:root {
+  --primary: #0078d7;
+  --primary-dark: #0056a3;
+  --accent: #00c2a8;
+  --text: #0f172a;
+  --muted: #334155;
+  --bg: #f5f9fc;
+  --card: #ffffff;
+  --radius: 14px;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  --transition: all 0.3s ease-in-out;
+}
+
+/* ---------- BASE ---------- */
+.emergency-page {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", "Poppins", sans-serif;
+  overflow-x: hidden;
+  padding-top: 70px;
+}
+
+/* ---------- INTRO ---------- */
+.emergency-intro {
+  text-align: center;
+  padding: 1.5rem 1.5rem 0.5rem; 
+  max-width: 900px;
+  margin: 0 auto; 
+  animation: fadeIn 1s ease;
+}
+
+.emergency-intro h1 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+.emergency-intro .highlight {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.emergency-intro p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* ---------- TIPS SECTION ---------- */
+.emergency-tips {
+  text-align: center;
+  max-width: 1250px;
+  margin: 0 auto; /* ✅ removed extra margins */
+  padding: 0 2rem 2rem; /* ✅ only bottom padding */
+}
+
+.emergency-tips h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin: 0 0 0.5rem 0; /* ✅ removed top margin */
+}
+
+.section-subtitle {
+  color: var(--muted);
+  max-width: 70ch;
+  margin: 0 auto 1.5rem; /* ✅ smaller bottom margin */
+}
+
+/* ---------- GRID ---------- */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2.5rem; 
+}
+.tip-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: var(--transition);
+  animation: fadeInUp 0.8s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 120, 215, 0.25);
+}
+
+.tip-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+.tip-card:hover .tip-image {
+  transform: scale(1.05);
+}
+
+.tip-info {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.tip-info h3 {
+  color: var(--primary-dark);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+}
+
+.tip-info p {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+/* ---------- PREPAREDNESS CTA ---------- */
+.preparedness-cta {
+  background: linear-gradient(135deg, rgba(0, 120, 215, 0.05), rgba(0, 194, 168, 0.08));
+  padding: 3rem 1.5rem;
+}
+
+.preparedness-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.cta-icon {
+  flex: 1 1 200px;
+  text-align: center;
+}
+
+.cta-icon img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  transition: var(--transition);
+}
+
+.cta-icon img:hover {
+  transform: rotate(8deg) scale(1.05);
+}
+
+.cta-text {
+  flex: 2 1 480px;
+}
+
+.cta-text h2 {
+  color: var(--primary-dark);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 1rem;
+}
+
+.cta-text p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 1.05rem;
+  max-width: 65ch;
+}
+
+.cta-text .highlight {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 991px) {
+  .tips-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .emergency-intro {
+    padding-top: 2rem;
+  }
+}
+
+/* ✅ 600px devices — show 2 cards per row, center last card if odd */
+@media (max-width: 600px) {
+  .tips-grid {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+
+  .tip-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}
+
+/* ✅ Smaller than 480px — switch to 1 card per row */
+@media (max-width: 480px) {
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tip-image {
+    height: 200px;
+  }
+
+  .emergency-intro {
+    padding: 2rem 1rem 1rem;
+  }
+}

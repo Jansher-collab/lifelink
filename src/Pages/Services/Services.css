@@ -1,0 +1,272 @@
+:root {
+  --primary: #0078d7;
+  --primary-dark: #0056a3;
+  --accent: #00c2a8;
+  --text: #0f172a;
+  --muted: #334155;
+  --bg: #f5f9fc;
+  --card: #ffffff;
+  --radius: 14px;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  --transition: all 0.35s ease;
+}
+
+.services-page {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", "Poppins", sans-serif;
+  padding-top: 100px; /* Space below navbar */
+  overflow-x: hidden;
+}
+
+/* ---------- HEADER ---------- */
+.services-header {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 1.5rem; /* reduced bottom space */
+  padding: 1.5rem 1rem 0; /* tighter padding, no bottom padding */
+  animation: fadeIn 1s ease;
+}
+
+.services-header h1 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 0.75rem;
+}
+
+.services-header .highlight {
+  color: var(--accent);
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.services-header p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* ---------- SERVICE GRID ---------- */
+.services-section {
+  text-align: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem; /* remove vertical padding, keep horizontal */
+  animation: fadeInUp 1s ease;
+}
+
+.services-section h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem; /* tighter spacing below heading */
+  margin-top: 0; /* no top gap */
+}
+
+.section-subtitle {
+  color: var(--muted);
+  max-width: 70ch;
+  margin: 0 auto 2rem; /* slightly reduced bottom margin */
+}
+
+/* ✅ Fixed Grid Layout for All Screens */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-items: center;
+  margin-top: 1rem;
+}
+
+/* ---------- SERVICE CARD ---------- */
+.service-box {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 380px;
+}
+
+.service-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 120, 215, 0.25);
+}
+
+/* ---------- SERVICE IMAGE ---------- */
+.service-image-wrapper {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.service-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-box:hover .service-image {
+  transform: scale(1.08);
+}
+
+/* ---------- SERVICE CONTENT ---------- */
+.service-content {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.service-content h3 {
+  color: var(--primary-dark);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.service-content p {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+/* ---------- CTA ---------- */
+.services-cta {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 3rem 2rem;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  animation: fadeInUp 1.3s ease;
+}
+
+.cta-content h2 {
+  color: var(--primary-dark);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  color: var(--muted);
+  max-width: 70ch;
+  margin: 0 auto 2rem;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  padding: 0.9rem 1.6rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 120, 215, 0.25);
+}
+
+.btn.primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+}
+
+.btn.outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn.outline:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+/* ✅ Large Screens (≥1200px) */
+@media (min-width: 1200px) {
+  .service-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ✅ Medium Screens (768px–1199px) */
+@media (max-width: 1199px) and (min-width: 501px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 2rem;
+  }
+
+  .service-box {
+    max-width: 100%;
+  }
+
+  .service-image-wrapper {
+    height: 200px;
+  }
+}
+
+/* ✅ Small Screens (<500px) */
+@media (max-width: 500px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 0 1rem;
+  }
+
+  .service-image-wrapper {
+    height: 180px;
+  }
+
+  .services-header {
+    padding: 1rem 1rem 0;
+    margin-bottom: 1rem;
+  }
+
+  .services-section,
+  .services-cta {
+    padding: 2rem 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
