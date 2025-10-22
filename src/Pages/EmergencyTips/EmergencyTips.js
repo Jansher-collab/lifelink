@@ -3,7 +3,8 @@ import "./EmergencyTips.css";
 
 export default function EmergencyTips() {
   // ✅ Helper for consistent image path resolution
-  const getImage = (path) => `${process.env.PUBLIC_URL}${path}`;
+  // Works both locally and on GitHub Pages
+  const getImage = (path) => `${process.env.PUBLIC_URL || "."}${path}`;
 
   const tips = [
     {
