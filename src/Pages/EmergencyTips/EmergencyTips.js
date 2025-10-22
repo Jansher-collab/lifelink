@@ -2,49 +2,52 @@ import React from "react";
 import "./EmergencyTips.css";
 
 export default function EmergencyTips() {
+  // ✅ Helper for consistent image path resolution
+  const getImage = (path) => `${process.env.PUBLIC_URL}${path}`;
+
   const tips = [
     {
-      img: "/assets/cpr-training.jpg",
+      img: getImage("/assets/cpr-training.jpg"),
       title: "Cardiac Arrest (CPR)",
       desc: "If a person isn’t breathing, start chest compressions at 100–120 per minute until help arrives.",
     },
     {
-      img: "/assets/bleeding.webp",
+      img: getImage("/assets/bleeding.webp"),
       title: "Heavy Bleeding",
       desc: "Apply firm pressure with a clean cloth. Don’t remove soaked layers — add new ones on top.",
     },
     {
-      img: "/assets/fracture.jpg",
+      img: getImage("/assets/fracture.jpg"),
       title: "Broken Bones",
       desc: "Keep the injured area still. Don’t straighten it — support it gently and seek medical help.",
     },
     {
-      img: "/assets/choking.webp",
+      img: getImage("/assets/choking.webp"),
       title: "Choking",
       desc: "If the person can’t breathe, perform quick upward abdominal thrusts until the blockage clears.",
     },
     {
-      img: "/assets/burns.jpg",
+      img: getImage("/assets/burns.jpg"),
       title: "Burns",
       desc: "Cool under running water for 10–15 minutes. Never apply ice or butter. Cover lightly with a clean cloth.",
     },
     {
-      img: "/assets/stroke.jpg",
+      img: getImage("/assets/stroke.jpg"),
       title: "Recognizing a Stroke",
       desc: "Use FAST — Face drooping, Arm weakness, Speech issues, Time to call emergency services.",
     },
     {
-      img: "/assets/seizure.jpg",
+      img: getImage("/assets/seizure.jpg"),
       title: "Seizures",
       desc: "Don’t restrain or put anything in their mouth. Clear the area and roll them to the side afterward.",
     },
     {
-      img: "/assets/road-accident.jpg",
+      img: getImage("/assets/road-accident.jpg"),
       title: "Road Accidents",
       desc: "Turn off ignition, ensure safety, call emergency services, and avoid moving victims unless necessary.",
     },
     {
-      img: "/assets/poisoning.jpg",
+      img: getImage("/assets/poisoning.jpg"),
       title: "Poisoning",
       desc: "Don’t induce vomiting. Keep the person still and note what was ingested for responders.",
     },
@@ -89,7 +92,10 @@ export default function EmergencyTips() {
       <section className="preparedness-cta">
         <div className="preparedness-content">
           <div className="cta-icon">
-            <img src="/assets/preparedness-icon.jfif" alt="Preparedness Icon" />
+            <img
+              src={getImage("/assets/preparedness-icon.jfif")}
+              alt="Preparedness Icon"
+            />
           </div>
           <div className="cta-text">
             <h2>Preparedness Saves Lives</h2>

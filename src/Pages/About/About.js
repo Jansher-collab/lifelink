@@ -1,6 +1,9 @@
 import "./About.css";
 
 export default function About() {
+  // ✅ Helper for consistent image paths
+  const getImage = (path) => `${process.env.PUBLIC_URL}${path}`;
+
   return (
     <main className="about-page">
       {/* ---------- HERO SECTION ---------- */}
@@ -17,7 +20,10 @@ export default function About() {
       {/* ---------- WHO WE ARE SECTION ---------- */}
       <section className="about-intro">
         <div className="about-image">
-          <img src="/assets/about.jpg" alt="LifeLink Team Working Together" />
+          <img
+            src={getImage("/assets/about.jpg")}
+            alt="LifeLink Team Working Together"
+          />
         </div>
         <div className="about-text">
           <h2>Who We Are</h2>
@@ -37,7 +43,7 @@ export default function About() {
       {/* ---------- MISSION & VISION ---------- */}
       <section className="about-mission">
         <div className="mission-card">
-          <img src="/assets/mission.jpg" alt="Mission" />
+          <img src={getImage("/assets/mission.jpg")} alt="Mission" />
           <h3>Our Mission</h3>
           <p>
             To save lives by improving the speed, accuracy, and reliability of emergency medical
@@ -45,7 +51,7 @@ export default function About() {
           </p>
         </div>
         <div className="mission-card">
-          <img src="/assets/vision.jpg" alt="Vision" />
+          <img src={getImage("/assets/vision.jpg")} alt="Vision" />
           <h3>Our Vision</h3>
           <p>
             A world where every emergency gets the fastest, most coordinated care possible —
@@ -72,7 +78,10 @@ export default function About() {
           </p>
         </div>
         <div className="commitment-image">
-          <img src="/assets/commitment.jpg" alt="Medical Commitment" />
+          <img
+            src={getImage("/assets/commitment.jpg")}
+            alt="Medical Commitment"
+          />
         </div>
       </section>
 

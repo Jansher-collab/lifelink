@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import "./Services.css";
 
 export default function Services() {
+  const getImage = (path) => `${process.env.PUBLIC_URL}${path}`;
+
   return (
     <main className="services-page">
       {/* HEADER SECTION */}
@@ -28,39 +30,39 @@ export default function Services() {
         <div className="service-grid">
           {[
             {
-              image: "/assets/emergency-ambulance.jpg",
+              image: getImage("/assets/emergency-ambulance.jpg"),
               title: "Emergency Ambulance",
               desc: "Fast-response emergency ambulances with professional paramedics and advanced life-saving equipment.",
             },
             {
-              image: "/assets/hospital-transfers.jpg",
+              image: getImage("/assets/hospital-transfers.jpg"),
               title: "Hospital Transfers",
               desc: "Smooth inter-hospital transfers with trained staff and complete coordination with receiving facilities.",
             },
             {
-              image: "/assets/dispatch-center.webp",
+              image: getImage("/assets/dispatch-center.webp"),
               title: "24/7 Dispatch Center",
               desc: "Always ready — quick allocation of ambulances with real-time tracking and support.",
             },
             {
-              image: "/assets/advance-life-support.webp",
+              image: getImage("/assets/advance-life-support.webp"),
               title: "Advanced Life Support",
               desc: "State-of-the-art equipment and skilled medics ensure intensive care on the move.",
             },
             {
-              image: "/assets/real-time-tracking.webp",
+              image: getImage("/assets/real-time-tracking.webp"),
               title: "Real-Time Tracking",
               desc: "Get live updates, ETA, and ambulance location directly via our digital dashboard.",
             },
             {
-              image: "/assets/event-corporate.jpg",
+              image: getImage("/assets/event-corporate.jpg"),
               title: "Event & Corporate Coverage",
               desc: "Reliable medical standby services for events, industries, and large public gatherings.",
             },
           ].map((s, i) => (
             <div className="service-box fade-in" key={i}>
               <div className="service-image-wrapper">
-                <img src={s.image} alt={s.title} className="service-image" />
+                <img src={s.image} alt={s.title} className="service-image" loading="lazy" />
               </div>
               <div className="service-content">
                 <h3>{s.title}</h3>
@@ -81,7 +83,7 @@ export default function Services() {
           </p>
           <div className="cta-actions">
             <Link to="/ambulances" className="btn primary">
-              🚑 Request Ambulance
+              Request Ambulance
             </Link>
             <Link to="/contact" className="btn outline">
               📞 Contact Support

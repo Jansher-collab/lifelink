@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -17,8 +16,12 @@ import Services from './Pages/Services/Services';
 import Ambulances from './Pages/Ambulances/Ambulances';
 
 function App() {
+  // 👇 Detect environment and apply correct base path
+  const isProduction = process.env.NODE_ENV === 'production';
+  const basename = isProduction ? '/lifelink' : '/';
+
   return (
-    <Router>
+    <Router basename={basename}>
       <ScrollToTop />
       <Navbar />
       <Routes>
@@ -26,9 +29,11 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/feedback" element={<Feedback />} />
-       <Route path="/emergency" element={<EmergencyTips />} />
+        <Route path="/emergency" element={<EmergencyTips />} />
         <Route path="/services" element={<Services />} />
         <Route path="/ambulances" element={<Ambulances />} />
+        {/* 404 fallback */}
+        <Route path="*" element={<Home />} />
       </Routes>
       <Footer />
     </Router>

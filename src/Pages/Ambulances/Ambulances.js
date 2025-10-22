@@ -1,6 +1,9 @@
 import "./Ambulances.css";
 
 export default function Ambulances() {
+  // ✅ Helper to ensure correct image path in all environments
+  const getImage = (path) => `${process.env.PUBLIC_URL}${path}`;
+
   return (
     <main className="ambulances-page">
       {/* ---------- PAGE INTRO ---------- */}
@@ -30,7 +33,7 @@ export default function Ambulances() {
           {/* 1: Basic Life Support */}
           <div className="fleet-card">
             <img
-              src="/assets/basic-life-support.jfif"
+              src={getImage("/assets/basic-life-support.jfif")}
               alt="Basic Life Support Ambulance"
               className="fleet-image"
             />
@@ -47,7 +50,7 @@ export default function Ambulances() {
           {/* 2: Advanced Life Support */}
           <div className="fleet-card">
             <img
-              src="/assets/advanced-life-support.webp"
+              src={getImage("/assets/advanced-life-support.webp")}
               alt="Advanced Life Support Ambulance"
               className="fleet-image"
             />
@@ -64,7 +67,7 @@ export default function Ambulances() {
           {/* 3: Patient Transport */}
           <div className="fleet-card">
             <img
-              src="/assets/patient-transport.jpg"
+              src={getImage("/assets/patient-transport.jpg")}
               alt="Patient Transport Ambulance"
               className="fleet-image"
             />
@@ -80,7 +83,7 @@ export default function Ambulances() {
           {/* 4: Mortuary Ambulance */}
           <div className="fleet-card">
             <img
-              src="/assets/mortuary-ambulance.jpg"
+              src={getImage("/assets/mortuary-ambulance.jpg")}
               alt="Mortuary Ambulance"
               className="fleet-image"
             />
@@ -96,7 +99,7 @@ export default function Ambulances() {
           {/* 5: Neonatal Ambulance */}
           <div className="fleet-card">
             <img
-              src="/assets/neonatal-ambulance.jpeg"
+              src={getImage("/assets/neonatal-ambulance.jpeg")}
               alt="Neonatal Ambulance"
               className="fleet-image"
             />
@@ -113,7 +116,7 @@ export default function Ambulances() {
           {/* 6: 4x4 Rural Ambulance */}
           <div className="fleet-card">
             <img
-              src="/assets/rural-ambulance.webp"
+              src={getImage("/assets/rural-ambulance.webp")}
               alt="Rural Ambulance"
               className="fleet-image"
             />

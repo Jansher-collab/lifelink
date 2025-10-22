@@ -9,21 +9,27 @@ import {
 import "./Footer.css";
 
 export default function Footer() {
+  // ✅ Helper to correctly load images both locally & on GitHub Pages
+  const getImage = (path) => `${process.env.PUBLIC_URL}${path}`;
+
   return (
     <footer className="footer">
       <div className="footer-inner">
-        {/* Brand Section */}
+        {/* ---------- BRAND SECTION ---------- */}
         <div className="footer-brand">
-          <div className="site-title">LifeLink</div>{" "}
-          {/* Website title above logo */}
-          <img src="/assets/logo.png" alt="LifeLink Logo" />
+          <div className="site-title">LifeLink</div>
+          <img
+            src={getImage("/assets/logo.png")}
+            alt="LifeLink Logo"
+            className="footer-logo"
+          />
           <p>
             LifeLink — Connecting lives with care, compassion, and emergency
             response excellence when it matters most.
           </p>
         </div>
 
-        {/* Quick Links */}
+        {/* ---------- QUICK LINKS ---------- */}
         <div className="footer-links">
           <h3>Quick Links</h3>
           <ul>
@@ -31,7 +37,10 @@ export default function Footer() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/ambulances">Ambulance Services</Link>
+              <Link to="/ambulances">Ambulance</Link>
+            </li>
+            <li>
+              <Link to="/services">Services</Link>
             </li>
             <li>
               <Link to="/hospitals">Hospitals</Link>
@@ -45,7 +54,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Follow Us */}
+        {/* ---------- FOLLOW US ---------- */}
         <div className="footer-social">
           <h3>Follow Us</h3>
           <div className="icons">
@@ -85,7 +94,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Line */}
+      {/* ---------- COPYRIGHT ---------- */}
       <div className="footer-bottom">
         © {new Date().getFullYear()} LifeLink. All rights reserved.
       </div>

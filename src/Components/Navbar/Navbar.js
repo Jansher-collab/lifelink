@@ -5,6 +5,9 @@ import "./Navbar.css";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  // ✅ Helper for correct image paths
+  const getImage = (path) => `${process.env.PUBLIC_URL}${path}`;
+
   const links = [
     { to: "/", label: "Home" },
     { to: "/services", label: "Services" },
@@ -19,7 +22,12 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-inner container">
         <div className="brand">
-          <img src="/assets/logo.png" alt="LifeLink logo" className="logo" />
+          {/* ✅ Fixed logo path */}
+          <img
+            src={getImage("/assets/logo.png")}
+            alt="LifeLink logo"
+            className="logo"
+          />
           <span className="brand-text">LifeLink</span>
         </div>
 
