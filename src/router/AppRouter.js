@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
 import ScrollToTop from "../Components/ScrollToTop/ScrollToTop";
@@ -12,20 +12,25 @@ import Contact from "../Pages/Contact/Contact";
 import Feedback from "../Pages/Feedback/Feedback";
 import NotFound from "../Pages/NotFound/NotFound";
 
+
 function AppRouter() {
+  // ✅ Automatically handle correct base path for both local and GitHub Pages
+  const basename =
+    window.location.hostname === "localhost" ? "/" : "/lifelink";
+
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router basename={basename}>
       <ScrollToTop />
       <Navbar />
       <main className="page-wrap">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Services" element={<Services />} />
-          <Route path="/Ambulances" element={<Ambulances />} />
-          <Route path="/Emergency-tips" element={<EmergencyTips />} />
-          <Route path="/Contact" element={<Contact />} />
-          <Route path="/Feedback" element={<Feedback />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/ambulances" element={<Ambulances />} />
+          <Route path="/emergency-tips" element={<EmergencyTips />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/feedback" element={<Feedback />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
