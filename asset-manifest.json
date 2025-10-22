@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/lifelink/static/css/main.d6e0a0ec.css",
-    "main.js": "/lifelink/static/js/main.97bdc113.js",
+    "main.js": "/lifelink/static/js/main.f54cf496.js",
     "index.html": "/lifelink/index.html",
     "main.d6e0a0ec.css.map": "/lifelink/static/css/main.d6e0a0ec.css.map",
-    "main.97bdc113.js.map": "/lifelink/static/js/main.97bdc113.js.map"
+    "main.f54cf496.js.map": "/lifelink/static/js/main.f54cf496.js.map"
   },
   "entrypoints": [
     "static/css/main.d6e0a0ec.css",
-    "static/js/main.97bdc113.js"
+    "static/js/main.f54cf496.js"
   ]
 }
